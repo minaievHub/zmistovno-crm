@@ -1,0 +1,382 @@
+.tg-demo-notice {
+  padding: 12px 16px;
+  background: #edf5fa;
+  border: 1px solid #dbeaf4;
+  border-radius: 9px;
+  color: #638aa3;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.tg-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+  margin: 24px 0;
+  overflow: auto;
+}
+.tg-tabs a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 16px;
+  border-bottom: 2px solid transparent;
+  color: #94859f;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.tg-tabs a.active {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: #f3eef9;
+  border-radius: 8px 8px 0 0;
+}
+.tg-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.tg-stats strong {
+  display: block;
+  font-size: 30px;
+  margin-top: 10px;
+}
+.tg-stats span {
+  font-size: 12px;
+}
+.tg-post-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.tg-post-excerpt {
+  font-size: 14px;
+  white-space: pre-wrap;
+  max-height: 145px;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+.tg-post-excerpt a,
+.tg-preview-body a {
+  color: #4591b3;
+  text-decoration: underline;
+}
+.tg-post-excerpt b,
+.tg-preview-body b,
+.tg-rich-editor b {
+  font-weight: 700;
+}
+.tg-post-excerpt i,
+.tg-preview-body i,
+.tg-rich-editor i {
+  font-style: italic;
+}
+.tg-connection-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.tg-big-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 13px;
+  background: #efe8f7;
+  color: #9e82bd;
+  display: grid;
+  place-items: center;
+}
+.tg-connection-grid .badge {
+  width: fit-content;
+}
+.tg-connection-grid p {
+  font-size: 13px;
+}
+.tg-editor-dialog {
+  max-width: 1040px;
+}
+.tg-editor-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: 30px;
+}
+.tg-editor-grid > aside {
+  align-content: start;
+  background: #faf8fc;
+  padding: 20px;
+  border-radius: 12px;
+}
+.tg-editor-grid label {
+  font-size: 12px;
+}
+.tg-destinations {
+  display: grid;
+  gap: 10px;
+  max-height: 170px;
+  overflow: auto;
+  padding: 12px;
+  background: #faf8fc;
+  border: 1px solid #eee6f4;
+  border-radius: 8px;
+}
+.tg-template-vars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #eadef2;
+  border-radius: 9px;
+}
+.tg-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 8px;
+  background: #f6f2fa;
+  border: 1px solid #e6ddec;
+  border-radius: 9px 9px 0 0;
+  padding: 5px;
+}
+.tg-toolbar .btn {
+  width: 31px;
+  min-height: 30px;
+  padding: 4px;
+}
+.tg-toolbar span {
+  font-size: 9px;
+  margin-left: auto;
+  padding-right: 7px;
+}
+.tg-rich-editor {
+  min-height: 230px;
+  border: 1px solid #e6ddec;
+  border-top: 0;
+  border-radius: 0 0 9px 9px;
+  padding: 16px;
+  outline: none;
+  white-space: pre-wrap;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.tg-rich-editor:focus {
+  box-shadow: 0 0 0 2px #9c82c522;
+}
+.tg-rich-editor ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+.tg-inline-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 10px;
+  background: #faf7fd;
+}
+.tg-inline-form input {
+  flex: 1;
+  min-width: 140px;
+}
+.tg-ai {
+  padding: 15px;
+  border: 1px dashed #ded1eb;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  color: #ad99be;
+}
+.tg-ai strong {
+  font-size: 12px;
+}
+.tg-ai > span {
+  font-size: 10px;
+}
+.tg-ai > div {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+.tg-ai .btn {
+  font-size: 9px;
+}
+.tg-upload {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  border: 1px dashed #d9c8e5;
+  border-radius: 10px;
+  background: #fff;
+  padding: 22px 12px;
+  color: #9b80b3;
+  cursor: pointer;
+}
+.tg-upload small {
+  font-size: 10px;
+  color: #b5a5c0;
+}
+.tg-upload input {
+  min-height: unset;
+  font-size: 10px;
+  width: 100%;
+  border: 0;
+  margin: 0;
+  padding: 3px;
+}
+.tg-media-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+}
+.tg-media-row span {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+.tg-button-fields {
+  display: grid;
+  gap: 8px;
+  border: 1px solid #e8dff0;
+  border-radius: 9px;
+  padding: 12px;
+}
+.tg-preview-bg {
+  background: #dcebdc;
+  background-image: radial-gradient(#b6cdb344 1px, transparent 1px);
+  background-size: 15px 15px;
+  border-radius: 12px;
+  padding: 28px;
+  max-width: 530px;
+  margin: 0 auto;
+}
+.tg-bubble {
+  background: #fff;
+  border-radius: 12px 12px 12px 3px;
+  padding: 16px;
+  box-shadow: 0 2px 5px #30442e0c;
+}
+.tg-bubble > strong {
+  display: block;
+  color: #4c94b9;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.tg-preview-body {
+  font-size: 14px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.tg-bubble > small {
+  display: block;
+  text-align: right;
+  color: #aac0a4;
+  font-size: 9px;
+  margin-top: 10px;
+}
+.tg-preview-button {
+  display: block;
+  background: #a7c3aa77;
+  border-radius: 6px;
+  text-align: center;
+  padding: 11px;
+  margin-top: 5px;
+  color: #3a6846;
+  font-size: 12px;
+  font-weight: 600;
+}
+.tg-preview-media {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 5px;
+  margin-bottom: 12px;
+}
+.tg-preview-media img,
+.tg-preview-media video {
+  width: 100%;
+  max-height: 270px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+.tg-preview-media a {
+  padding: 12px;
+  background: #f0f4f7;
+  border-radius: 6px;
+  color: #7992a5;
+  font-size: 12px;
+}
+.tg-delivery {
+  border-top: 1px solid #ece4f2;
+  padding: 16px 0;
+  font-size: 12px;
+}
+.tg-delivery > strong {
+  margin-right: 10px;
+}
+.tg-delivery > small {
+  display: block;
+  color: #aa98b7;
+  font-size: 10px;
+  margin-top: 5px;
+}
+.tg-post-list .card > p {
+  font-size: 11px;
+}
+.sidebar {
+  overflow-y: auto;
+}
+.sidebar-bottom {
+  padding-top: 12px;
+}
+.school-note {
+  margin-top: 5px;
+}
+@media (max-width: 1000px) {
+  .tg-editor-grid {
+    grid-template-columns: 1fr;
+  }
+  .tg-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tg-post-list {
+    grid-template-columns: 1fr;
+  }
+  .tg-editor-dialog {
+    max-width: 680px;
+  }
+  .tg-connection-grid {
+    gap: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .tg-connection-grid {
+    grid-template-columns: 1fr;
+  }
+  .tg-tabs a {
+    padding: 11px;
+    font-size: 11px;
+  }
+  .tg-preview-bg {
+    padding: 15px;
+  }
+  .tg-template-vars {
+    grid-template-columns: 1fr;
+  }
+  .tg-editor-dialog {
+    padding: 24px 18px;
+  }
+  .tg-rich-editor {
+    min-height: 180px;
+  }
+  .tg-stats {
+    gap: 10px;
+  }
+  .tg-toolbar span {
+    display: none;
+  }
+}

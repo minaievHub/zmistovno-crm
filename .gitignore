@@ -1,0 +1,17 @@
+node_modules/
+.next/
+.next-test/
+.env*
+!.env.example
+.tools/
+.test-db/
+test-results/
+playwright-report/
+*.tsbuildinfo
+*.log
+*.pem
+*.key
+*.p12
+*.pfx
+.DS_Store
+Thumbs.db
