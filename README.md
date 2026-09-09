@@ -6,6 +6,7 @@
 
 ## Документація
 
+- [Готовий архів для сервера з 2 GB RAM — без збірки на сервері](docs/SERVER.md)
 - [Робоче розгортання](docs/PRODUCTION.md)
 - [Інструкція для команди](docs/USER_GUIDE.md)
 - [Telegram Control Center](docs/TELEGRAM.md)

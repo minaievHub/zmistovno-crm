@@ -1,0 +1,51 @@
+name: Build server archive
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+      NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Check public build configuration
+        run: node -e "for (const k of ['NEXT_PUBLIC_SUPABASE_URL','NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY']) if (!process.env[k]) throw Error('Missing repository variable '+k)"
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+      - run: node scripts/package-server.mjs
+      - name: Smoke test standalone server
+        run: |
+          cd server-package
+          HOSTNAME=127.0.0.1 PORT=3100 node server.js > /tmp/crm-smoke.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:3100/login > /tmp/crm-login.html; then break; fi
+            sleep 1
+          done
+          test -s /tmp/crm-login.html
+          curl --fail --silent http://127.0.0.1:3100/login > /dev/null
+      - name: Archive Linux x64 package
+        run: |
+          tar -czf zmistovno-crm-linux-x64.tar.gz -C server-package .
+          sha256sum zmistovno-crm-linux-x64.tar.gz > zmistovno-crm-linux-x64.tar.gz.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zmistovno-crm-linux-x64
+          path: |
+            zmistovno-crm-linux-x64.tar.gz
+            zmistovno-crm-linux-x64.tar.gz.sha256
+          retention-days: 30
+          if-no-files-found: error

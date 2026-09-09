@@ -15,3 +15,4 @@ playwright-report/
 *.pfx
 .DS_Store
 Thumbs.db
+server-package/

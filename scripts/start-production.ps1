@@ -5,7 +5,6 @@ if (Test-Path -LiteralPath (Join-Path $portableNode 'node.exe')) { $env:PATH = "
 node scripts/check-production.mjs
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 $env:NODE_ENV = 'production'
-npm.cmd run build
-if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+if (!(Test-Path -LiteralPath '.next/BUILD_ID')) { throw 'Build missing. Use the GitHub Actions deployment archive, or build once on a separate machine.' }
 npm.cmd start
 exit $LASTEXITCODE
